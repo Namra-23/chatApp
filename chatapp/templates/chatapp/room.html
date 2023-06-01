@@ -1,0 +1,22 @@
+{{chatroom.name}}
+<form action="" method="post">
+    <input type="text" name="message" placeholder="Enter Message">
+    <button type="submit">Send</button>
+</form>
+{{chatroom.slug | json_script:"json-chatroomname"}}
+<script>
+    const chatRoomName = JSON.parse(document.getElementById('json-chatroomname').textContent)
+    const chatSocket = new WebSocket(
+        'ws://'
+        + window.location.host
+        +'/ws/'
+        +chatRoomName
+        +'/'
+    )
+    chatSocket.onmessage = function(e) {
+        console.log('This is a message')
+    }
+    chatSocket.onclose = function(e){
+        console.log('Socket closed')
+    }
+</script>
