@@ -12,7 +12,7 @@
 <body>
     <nav class="shadow-lg px-3 py-2.5">
         <div class="container flex flex-wrap justify-between mx-auto">
-            <a class="flex items-center" href="">
+            <a class="flex items-center" href="{% url 'index' %}">
                 <img class="h-8 mr-3"
                     src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Facebook_Messenger-256.png" alt="">
                 <span class="self-center text-xl font-semibold">Chats App</span>
@@ -24,7 +24,8 @@
                         <a class="block py-2 px-3 rounded bg-blue-700 text-white" href="">Rooms</a>
                     </li>
                     <li>
-                        <a class="block py-2 px-3 rounded" href="">About</a>
+                        <a class="block py-2 px-3 rounded" href="{% url 'About' %}">About</a>
+                        
                     </li>
                 </ul>
             </div>
